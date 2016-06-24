@@ -1,0 +1,31 @@
+doctype html
+html
+	include head.jade	
+	body
+		include menubar.jade
+		include search.jade
+		.id-holder #{ID}
+		#pageType artistList
+		.breadcrumbs
+			.bc-item 
+				a.bc(href='/') home &rsaquo;
+			.bc-item 
+					a.bc(href='/artists') artists
+		.breadcrumbsMob
+			.bc-item
+				a.bc(href='/') &lsaquo; 
+		.megaPersonList
+			.grid
+				each artist in data
+					.grid-item(style='#{artist.images}')
+						a.relatedComposerLink(href='#{artist.href}')
+							.spacer
+							.bdayDetails
+								.bdayInner
+									.composer.midSize.super-strong #{artist.name}
+									.life
+			.centreButton
+				.button#moreArtists 
+					.buttonInner.super-strong More<br />Artists
+					include loader.jade
+				.end

@@ -1,0 +1,80 @@
+/*Albums*/
+	.albumContainer{
+		margin: .5vw;
+		}
+		.albumHead{
+			padding: 0 0 0 .5em;
+		}
+		.composerContent{
+			background-color:$background;
+			padding: 1em 1em 0 1em;
+		}
+		.composerBody{
+			clear: both;
+			margin: 0 0 0 0em;
+		}
+		.albums{
+			display:flex;
+			flex-wrap: wrap;
+			margin: auto 0 auto 0;
+			@media (max-device-width: $break-small) {
+				//margin-left:.5vw
+			}			
+		}
+		.albumBox{
+			box-sizing: border-box;
+			padding-bottom: 100%;
+  		position: relative;
+			min-height: 25vw;
+			min-width: 25vw;
+			margin: 0;
+			padding: .5em;
+			@media (max-device-width: $break-small) {
+				min-height: 50vw;
+				min-width: 50vw;
+			}
+			.albumBoxInner{
+				-webkit-filter: contrast(400%) grayscale(100%);
+				-webkit-transition : -webkit-filter 500ms ease;
+				 display: -webkit-box;
+			  display: -webkit-flex;
+			  display: -moz-box;
+			  display: -ms-flexbox;
+			  display: flex; 
+			  box-sizing: border-box;
+			  position: absolute;
+			  top: 0; 
+			  right: 0; 
+			  bottom: 0; 
+			  left: 0;
+				background-size: cover;
+				background-position: center;
+				&:hover{
+					-webkit-filter: contrast(200%);
+				}
+				.albumNameOuter{
+					position: absolute;
+					height: 75%;
+					padding: 1vw;
+					width: 100%;
+					bottom: 0;
+					box-sizing: border-box;
+					.albumName{
+						box-sizing: border-box;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						padding: .5vw;
+						position: absolute;
+						bottom: 0;
+						left:0 ;
+					}
+				}
+			}
+
+		}
+		.albumBox:hover{
+			cursor: pointer;
+		}
+
+
+		

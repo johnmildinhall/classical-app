@@ -1,0 +1,22 @@
+html
+	include head.jade	
+	body
+		include menubar.jade
+		include search.jade
+		.id-holder #{ID}
+		.breadcrumbs
+			.bc-item 
+				a.bc(href='/') home &rsaquo;
+			.bc-item 
+					a.bc(href='/concerts') concerts
+		.breadcrumbsMob
+			.bc-item
+				a.bc(href='/') &lsaquo; 
+		.megaPersonList
+			.concertHolder
+				.firstConcert
+					include upcoming-concerts.jade
+				each concert in concerts
+					.concertContainer
+						include concertBox.jade
+				//include concertBox.jade

@@ -1,0 +1,19 @@
+doctype html
+html
+	include head.jade	
+	body
+		include search.jade
+		#result
+			.breadCrumb
+				.item 
+					a.bc(href='/') home
+				.item 
+					a.bc(href='/composer') composer
+				.item #{title}
+				.item albums
+			.composerBox
+				.composerName
+				.composerImage
+			.albumBox
+				.albumImage
+					.albumTitle

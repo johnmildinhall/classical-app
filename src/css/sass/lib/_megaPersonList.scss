@@ -1,0 +1,94 @@
+.megaPersonList{
+	margin: 1.6em 0 0 0;
+	overflow: scroll;
+	color:$see-thru-grey;
+	@media (max-device-width: $break-small) {
+		margin: 8vh 0 0 0;
+	}
+	.grid{
+		display:flex;
+		flex-wrap: wrap;
+		.grid-item { 
+			-webkit-filter: contrast(400%) grayscale(100%);
+			-webkit-transition : -webkit-filter 500ms ease;
+			position: relative;
+			background-size: cover;
+			margin: 0;
+			box-sizing: border-box;
+			&:hover{
+				-webkit-filter: contrast(200%);
+			}
+
+			@media (min-width: $break-6){
+				width: 100vw;
+				height: 100vw;
+			}
+			@media (min-width: $break-5){
+				width: 50vw;
+				height: 50vw;
+			}
+			@media (min-width: $break-4){
+				width: 33.3vw;
+				height: 33.3vw;
+			}
+			@media (min-width: $break-3){
+				width: 25vw;
+				height: 25vw;
+			}
+			@media (min-width: $break-2){
+				width: 20vw;
+				height: 20vw;
+			}
+			@media (min-width: $break-1){
+				width: 16.666666vw;
+				height: 16.666666vw;
+			}
+
+
+
+
+
+
+
+
+			@media (max-device-width: $break-small) {
+				width: 50vw;
+				height: 50vw;
+			}
+			.spacer{
+				height: 25%;
+			}
+			.bdayDetails{
+				height: 75%;
+				width: 100%;
+				position: relative;
+				float: none;
+				//background: linear-gradient(to top, rgba(0, 0, 0, 1),  rgba(0, 0, 0, 0));
+				.bdayInner{
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					padding: .5em;
+					.composer{
+						.relatedLink{
+							color: $white !important;
+						}
+					}
+					.midSize{
+						background-color:$white;
+						line-height: .9;
+						padding:.5vw;
+						@media only screen and (max-device-width: $break-small) {				
+							padding:1vw;
+						}
+					}
+					.life{
+
+					}
+				}
+
+			}
+		}		
+	}
+
+}

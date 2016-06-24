@@ -1,0 +1,31 @@
+doctype html
+html
+	include head.jade	
+	body
+		include menubar.jade
+		include search.jade
+		#pageType catalogue
+		.id-holder #{ID}
+		.breadcrumbs
+			.bc-item 
+				a.bc(href='/') home &rsaquo;
+			.bc-item 
+				a.bc(href='/composers') composers &rsaquo;
+			.bc-item 
+				a.bc(href='/composers/#{composer}') #{composer} &rsaquo;
+			.bc-item 
+				a.bc(href='/composers/#{composer}/cat') catalogue &rsaquo;	
+		.megaPersonList
+			.concertHolder
+				.catSpacer
+				h1 #{composer}
+				h3 Catalogues
+				.catSpacer
+				if data
+					each catalogue in data
+						.catalogue
+							a(href='/composers/#{composer}/cat/#{catalogue.abbreviationDefault}') 
+								.catItem #{catalogue.abbreviationList}
+								.catName #{catalogue.description}
+								.catCount #{catalogue.count}
+

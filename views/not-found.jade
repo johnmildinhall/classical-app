@@ -1,0 +1,19 @@
+doctype html
+html
+	head
+		title #{title}
+		script(src='//use.typekit.net/upb2ayy.js')
+		link(rel='stylesheet', href='css/introjs.min.css')
+		link(rel='stylesheet', href='/css/styles.css')
+		script.
+			try{Typekit.load();}catch(e){}
+	
+	body
+		#search
+			input(name="searchInput" id="searchInput" onfocus="if (this.value=='Search Composer, Piece') {this.value = ''};" type="text" value="Search Composer, Piece" data-step="1" data-intro="<p>You can search for a composer, a piece, or an instrument.</p><p>Try searching for <b>Mozart</b>, <b>Sonata</b> or <b>Bassoon</b>.</p>")
+		#composer-body
+			.notFound
+				h1 Not Found
+				p We couldn't find anything for #{searchTerm}. Try Searching in the box above, or check the spelling.
+
+		

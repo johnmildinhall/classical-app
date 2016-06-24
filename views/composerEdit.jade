@@ -1,0 +1,54 @@
+doctype html
+html
+	include head.jade	
+	body
+		include menubar.jade
+		include search.jade
+		include albumOverlay.jade
+		.id-holder #{data.ID}
+		#pageType.hidden edit
+		.composerBackground
+		.composerHead
+			.breadcrumbs
+				.bc-item 
+					a.bc(href='/') home &rsaquo;
+				.bc-item 
+					a.bc(href='/composers') composers &rsaquo;
+				.bc-item 
+					a.bc(href='/composers/#{data.name}') #{data.name} &rsaquo;
+				.bc-item edit
+		.composerBackground(style='#{data.images}')
+		.composerHead
+			.headTitleBox
+				.name #{data.name}
+				.life 
+		.composerContent
+			.images
+				.imageItem
+					img.ph.large
+					.imageHolder.large
+					.textHolder
+						.label Large Image
+						input.imageLarge(value = '#{data.imageLarge}')
+				.imageItem
+					img.ph.medium
+					.imageHolder.medium
+					.textHolder
+						.label Medium Image
+						input.imageMedium(value = '#{data.imageMedium}')
+				.imageItem
+					img.ph.small
+					.imageHolder.small
+					.textHolder
+						.label Small Image
+						input.imageSmall(value = '#{data.imageSmall}')
+				.life
+					.label Date of Birth 
+					input.dob(value = '#{data.birth}')
+					.label Date of Death
+					input.dod(value = '#{data.death}')
+				.otherDetails
+					.label Biography
+					textarea.bio #{data.bio}
+		.temp #{data}
+

@@ -1,0 +1,86 @@
+	.relatedContainer, .topArtistsContainer, .topComposers, .relatedArtists{
+		box-sizing: border-box;
+		margin:0 0 0 0;
+		@media only screen and (max-device-width: $break-small) {
+			margin:0;				
+		}
+		.relatedTitle{
+			padding: 0 0 0 .5vw;
+		}
+		.related{
+			//line-height:0;
+			width:100%;
+			display:flex;
+			flex-wrap:nowrap;
+			overflow: scroll;
+			.relatedBox, .relatedArtistBox{
+				text-align:center;
+				flex: 0 0 auto;
+				height:13.2vw;
+				width:13.2vw;
+				margin: 0 0 0 0;
+				@media only screen and (max-device-width: $break-small) {
+					width: 50vw;
+					height:50vw;
+					margin: 0 0 0 0;					
+				}
+				.relatedImage{
+					-webkit-filter: contrast(400%) grayscale(100%);
+					-webkit-transition : -webkit-filter 500ms ease;
+					position:relative;
+					height:13.2vw;
+					width:13.2vw;
+					background-size: cover;
+					background-position:center;
+					&:hover{
+						-webkit-filter: contrast(200%);
+					}
+					@media only screen and (max-device-width: $break-small) {
+		    		width: 50vw;
+		    		height: 50vw;
+					}	
+					.relatedInner{
+						box-sizing: border-box;
+						width:100%;
+						position:absolute;
+						bottom:0;
+						max-height:75%;
+						@media only screen and (max-device-width: $break-small) {				
+							margin:2vw;
+							width:96vw;
+						}
+						//background: linear-gradient(to top, rgba(0, 0, 0, 1),  rgba(0, 0, 0, 0));
+						.relatedName, .relatedArtistName{
+							hyphens: auto;
+							position:absolute;
+							bottom:0;
+							background-color:$white;
+							color:$black !important;
+							margin:.25vw;
+							padding:0 .25vw .25vw .25vw;
+							text-align: left;
+							max-width:100%;
+							overflow: hidden;
+							@media only screen and (max-device-width: $break-small) {		
+
+							}
+						}				
+					}
+
+				}
+
+
+
+			}
+			//coloured overlays - composer
+
+			//coloured overlays - artist
+		
+
+		}
+	}
+
+	.spacer{
+		width:0.01vw;
+		flex: 0 0 auto;
+	}

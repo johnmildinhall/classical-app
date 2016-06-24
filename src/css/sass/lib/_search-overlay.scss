@@ -1,0 +1,293 @@
+.searchLink{
+	display:block;
+	width:100%;
+	&:hover{
+		background-color:$composer;
+		cursor:pointer;
+		text-decoration: none;
+	}
+}
+
+// .searchSlideout {
+
+// 	-webkit-animation: slideout 1000ms forwards;
+//   animation: slideout 1000ms forwards;
+// }
+
+.searchSlidein {
+    transform: translate(0,100%);
+    -webkit-transform: translate(0,100%);
+    -o-transform: translate(0,100%); 
+    -moz-transform: translate(0,100%);
+    }
+
+.searchSlideout {
+    transform: translate(0,-100%);
+    -webkit-transform: translate(0,-100%);
+    -o-transform: translate(0,-100%); 
+    -moz-transform: translate(0,-100%);
+}
+
+
+.searchOverlay{
+	transition: all 150ms ease-in-out;
+	position:fixed;
+	height:100%;
+	width:100%;
+	overflow: scroll;
+	background-color:white;
+	top:-100%;
+	left:0;
+	z-index:9999;
+	.close{
+		display:block;
+		float:right;
+		margin: 0em .3em 0 0 ;
+		background-image: url('/images/close.svg');
+		background-size: cover;
+		background-position: center;
+		&:hover{
+			cursor: pointer;
+		}
+		@media (max-device-width: $break-small) {
+			margin: 1em 1em 0 0 ;		
+		}
+	}
+	.searchLabel{
+		margin-top:-10px;
+	}
+	.inputContainer{
+		max-width:20em;
+		margin: .5em auto 0 auto;
+		@media (max-device-width: $break-small) {
+			max-width:95vw;
+		}
+	}
+	input{
+		margin: 1em 0 0 0;
+		text-align: center;
+		color:$dark-grey;
+		width:100%;
+		outline: 0;
+		border: 0;
+		border-bottom:2px solid $dark-grey;
+		&:focus{
+			color:$dark-grey;
+		}
+		@media (max-device-width: $break-small) {
+		}
+	}
+
+	.result{
+		box-sizing:border-box;
+		overflow: scroll;
+		top:5.9em;
+		margin: 0 auto;
+		background-color:$super-light-grey;
+		border:0;
+		z-index:9999;
+		width:75vw;
+
+		@media (max-width: $break-medium) {
+			width:100%;
+		}
+		@media (max-device-width: $break-small) {
+			width:95vw;
+		}
+		.sectionTitle{
+			//display:none;
+			margin: 0 0 .5vw 0;
+		}
+	}
+
+	.searchTitle{
+		margin: 0 0 .5vw 0;
+		padding-top:0 !important;
+	}
+	.composerResultsBox, .artistResultsBox, .trackResultsBox, .albumResultsBox{
+		//display:none;
+	}
+	.composerHolder, .artistHolder, .trackHolder, .albumHolder{
+		display:block;
+	}
+	.composerHolder, .artistHolder{
+		margin-bottom:1em;
+	}
+	.artistNameSearch{
+		margin-top:.5em;
+		padding:0 .5em 0 .5em;
+		text-align: center;
+	}
+
+	.composerResultsBox{
+		clear:both;
+		height:5vw;
+		margin: 0 0 .5vw 0;
+		@media (max-device-width: $break-medium) {
+			height:10vw;
+		}
+		.composerSearchDetails{
+			margin: .5vw 0 0 5.5vw;
+			@media (max-device-width: $break-medium) {
+				margin: .5vw 0 0 12.5vw;
+			}
+			.composerSearchName{
+				@media (max-device-width: $break-medium) {
+				}
+				@media (max-device-width: $break-small) {
+				}
+				.composerLink{
+					color:$mid-dark-grey !important;
+				}
+			}
+			.composerSearchLife{
+				@media (max-device-width: $break-small) {
+				}
+			}
+
+		}
+		.composerSearchImage{
+			float:left;
+			width:5vw;
+			height:5vw;
+			background-size:cover !important;
+			@media (max-device-width: $break-medium) {
+				height:10vw;
+				width:10vw;
+			}
+		}
+		
+	}
+
+		.artistResultsBox{
+		clear:both;
+		height:5vw;
+		margin: 0 0 .5vw 0;
+		@media (max-device-width: $break-medium) {
+			height:10vw;
+		}
+		.artistSearchDetails{
+			margin: .5vw 0 0 5.5vw;
+			@media (max-device-width: $break-medium) {
+				margin: .5vw 0 0 12.5vw;
+			}
+			.artistSearchName{
+				@media (max-device-width: $break-medium) {
+				}
+				@media (max-device-width: $break-small) {
+				}
+				.composerLink{
+					color:$mid-dark-grey !important;
+				}
+			}
+			.artistSearchLife{
+			}
+		}
+		.artistSearchImage{
+			float:left;
+			width:5vw;
+			height:5vw;
+			background-size:cover !important;
+			@media (max-device-width: $break-medium) {
+				height:10vw;
+				width:10vw;
+			}
+		}
+		
+	}
+
+	.albumResultsBox{
+		width:100%;
+		height:5vw;
+		margin: 0 0 .5vw 0;
+		@media (max-device-width: $break-medium) {
+			height:10vw;
+		}
+		.albumSearchDetails{
+			margin: .5vw 0 0 5.5vw;
+			@media (max-device-width: $break-medium) {
+				margin: .5vw 0 0 10.5vw;
+			}
+			@media (max-device-width: $break-medium) {
+				margin: .5vw 0 0 12.5vw;
+			}
+			.albumSearchName{
+				@media (max-device-width: $break-medium) {
+				}
+				@media (max-device-width: $break-medium) {
+				}
+			}			
+		}
+		.albumSearchImage{
+			float:left;
+			width:5vw;
+			height:5vw;
+			background-size:cover;
+			@media (max-device-width: $break-medium) {
+				height:10vw;
+				width:10vw;
+			}
+		}		
+	}
+
+
+}
+
+//buttons
+
+
+// play controls
+.searchTrack{
+	padding:.4em 0 .4em 0;
+	/*white-space: nowrap;*/
+	.buttons{
+		display:inline-block;
+	  width:5vw;
+	  white-space: normal;
+	  cursor: pointer;
+	  vertical-align: middle;
+		@media (max-device-width: $break-medium) {
+			width:10vw;
+		}
+	  .searchPlay{
+	  	margin: 0 auto;
+			background-image: url('/images/play.svg');
+			background-repeat: no-repeat;
+			background-size: 80%;
+			background-position: center;
+			width:2.5vw;
+			height:2.5vw;
+		}
+		.searchPause{
+			margin: 0 auto;
+			background-image: url('/images/pause.svg');
+			display:none;
+			background-repeat: no-repeat;
+			background-size: 80%;
+			background-position: center;
+			width:2.5vw;
+			height:2.5vw;
+		}
+		.playOrange{
+			background-image: url('/images/play_orange.svg');
+		}
+		.pauseOrange{
+			background-image: url('/images/pause_orange.svg');
+		}
+		.inactive{
+			display:none;
+		}
+	}
+	.text{
+		vertical-align:middle;
+		display:inline-block;
+	  width:auto;
+	  white-space: normal;
+	}
+}
+
+
+
+.proto{
+	display:none;
+}

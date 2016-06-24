@@ -1,0 +1,12 @@
+.concerts(style='#{concert.image}')
+	a.concertPageLink(href = '#{concert.page}')
+		.titleBox
+			.upperBox
+				h3.concertTitle #{concert.title}
+				.concertComposers.super-strong !{concert.composerList}
+				.concertDateAndVenue !{concert.date.shortHumanDate}
+			.lowerBox
+				.concertArtists !{concert.artistList}
+				a.bookLink.noUnderline(href = '#{concert.url}')
+					.bookTickets 
+						.bookButton >> Book Tickets >>

@@ -1,0 +1,51 @@
+doctype html
+html
+	include head.jade	
+	body
+		include menubar.jade
+		include search.jade
+		#pageType catalogue
+		.id-holder #{ID}
+		.breadcrumbs
+			.bc-item 
+				a.bc(href='/') home &rsaquo;
+			.bc-item 
+				a.bc(href='/composers') composers &rsaquo;
+			.bc-item 
+				a.bc(href='/composers/#{composer}') #{composer} &rsaquo;
+			.bc-item 
+				a.bc(href='/composers/#{composer}/cat') catalogue &rsaquo;
+			.bc-item 
+				a.bc(href='/composers/#{composer}/cat/#{symbol}') #{symbol} &rsaquo;	
+		.megaPersonList
+			.concertHolder
+				.catSpacer
+				h1 #{composer}
+				h3 Catalogue : #{symbol}
+				.catSpacer
+				if data
+					each item in data
+							.catalogue
+									.catItem #{item.symbol}.#{item.work}
+									.catName 
+										a(href='/composers/#{composer}/cat/#{symbol}/#{item.work}') #{item.canonicalName}
+									.catCount #{item.count}
+									if item.suffix
+										each suffix in item.suffix
+											if suffix.suffix
+												if suffix.postfix
+														.suffix
+															.catItem
+															.sufItem #{suffix.suffix}.#{suffix.postfixStr}
+															.sufName 
+																a(href='/composers/#{composer}/cat/#{symbol}/#{item.work}/#{suffix.suffix}/#{suffix.postfix}') #{suffix.suffixName}
+															//- .sufCount	#{suffix.count}
+												else			
+														.suffix
+															.catItem
+															.sufItem #{suffix.suffix}.#{suffix.postfixStr}
+															.sufName 
+																a(href='/composers/#{composer}/cat/#{symbol}/#{item.work}/#{suffix.suffix}') #{suffix.suffixName}
+															//- .sufCount	#{suffix.count}
+
+

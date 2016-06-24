@@ -1,0 +1,349 @@
+$background: #fff;
+$composer:tomato;
+$artist:#009cb8;
+$super-light-grey:#EDEDED;
+$light-grey:#ddd;
+$mid-grey:#aaa;
+$mid-dark-grey:#333;
+$dark-grey:#222;
+$blue:#009cb8;
+$light-blue:#47e3ff;
+$shadow:rgba(0,0,0,.6);
+$see-thru-tomato:rgba(255,99,71, .5);
+$see-thru-blue:rgba(0, 156, 184, 0.53);
+$see-thru-green:rgba(77,178,77,.5);
+$see-thru-grey:rgba(200,200,200,.5);
+$see-thru-white:rgba(255,255,255,.8);
+$see-thru-light-grey:rgba(255,255,255,.6);
+$black:#000;
+$white:#fff;
+$green:#4DB24D;
+
+//Break points - mobile
+$break-small: 667px;
+$break-medium:1100px;
+
+//Break points window resize
+$break-1: 1200px;
+$break-2: 1000px;
+$break-3: 800px;
+$break-4: 600px;
+$break-5: 400px;
+$break-6: 200px;
+
+//buttons
+$button-color: black;
+$button-hover-color: tomato;
+
+$button-transition : 75ms linear;
+
+//Hero text
+$hero-wight : 900;
+
+
+
+@import "lib/_menuBar.scss";
+@import "lib/_search-overlay.scss";
+@import "lib/_artist.scss";
+@import "lib/_composer-head.scss";
+@import "lib/_composer-body.scss";
+@import "lib/_concerts.scss";
+@import "lib/_related.scss";
+@import "lib/_albums.scss";
+@import "lib/_album-overlay.scss";
+@import "lib/_album-page.scss";
+@import "lib/_front.scss";
+@import "lib/_megaPersonList.scss";
+@import "lib/_edit.scss";
+@import "lib/_catalogue.scss";
+@import "lib/_loader.scss";
+
+
+
+body{
+	background-color: $white;
+	max-width:100%;
+	margin:0;
+  overflow-x: hidden;
+  height:100%
+}
+
+input{
+	font-size:1em;
+}
+
+//GENERIC STYLES
+
+//hero text
+h1{
+	font-weight:900;
+	font-size:4em;
+	line-height:1;
+	text-transform: uppercase;
+	font-style: italic;
+	margin: 0 0 0 0;
+	@media only screen and (max-device-width: $break-small) {
+		font-size: 2em;
+	}
+}
+h3{
+	font-size:2em;
+	font-weight:100;
+	margin: 0 0 0 0;
+	line-height:1;
+}
+h4{
+	font-weight:900;
+	font-size:2.5em;
+	line-height:1;
+	text-transform: uppercase;
+	font-style: italic;
+	margin: 0 0 0 0;	
+}
+
+//headings
+h2{
+	font-size:2em;
+	font-weight:500;
+	margin: 0 0 0 .5vw;
+	line-height: 1;
+	@media only screen and (max-device-width: $break-small) {
+		font-size: 1.5em;
+	}
+}
+
+
+//strong for composers
+.strong{
+	font-weight:500;
+}
+.super-strong{
+	font-weight:900;
+}
+.searchStyle{
+	font-size:2em;
+}
+.whiteOnBlack{
+	color:white;
+}
+//bold orange for catalogue links
+.orange-bold{
+	color:tomato;
+	font-weight:900;
+}
+//icons
+.icon{
+	width:2em;
+	height:2em;
+}
+
+//white on black
+.white-on-black{
+	color: white;
+}
+
+//link without underline
+.noUnderline{
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+
+a{
+	text-decoration: none;
+	color:$black;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+#id-holder, #pageType{
+	display:none;
+}
+.catalogueButton{
+	box-sizing:border-box;
+	text-align: center;
+	background-color:$black;
+	max-width:80%;
+	margin:0 auto;
+	margin-top: 1vw;
+	padding:1vw;
+	// flex: 0 0 auto;
+	// display: flex;
+	justify-content: center;
+	-webkit-transition : 75ms linear;
+	&:hover{
+		cursor:pointer;
+		background-color:$composer;
+	}
+}
+
+.button{
+	box-sizing:border-box;
+	text-align: center;
+	background-color:$black;
+	margin:1vw;
+	height:11.2vw;
+	padding:0 0 0 0;
+	width:11.2vw;
+	flex: 0 0 auto;
+	display: flex;
+	justify-content: center;
+	-webkit-transition : 75ms linear;
+	&:hover{
+		cursor:pointer;
+		background-color:$composer;
+	}
+	@media only screen and (max-device-width: $break-small) {
+		width: 50vw;
+		height:50vw;
+		margin: 0 0 0 0;				
+	}
+}
+	.loading{
+		background-color:$white;
+		&:hover{
+			cursor:auto !important;
+			background-color:$white !important;
+	}
+	}
+	.buttonInner{
+		color:$white;
+		align-self: center;
+	}
+
+
+h2{
+
+}
+.hidden{
+	display:none;
+}
+.composerContent{
+	padding: 0 0 0 0;
+	box-sizing:border-box;
+	min-height:1000px;
+}
+#proto, #proto2{
+	display:none;
+}
+//TITLE ALL CAPS
+.sectionTitle, .searchTitle{
+	position:relative;
+	background-color:$white;
+	width:100%;
+	padding: 2vw 0 0vw 0;
+	box-sizing:border-box;
+	z-index:1;
+	background-position:10%;	
+	@media only screen and (max-device-width: $break-small) {
+		padding: 10vw 0 0 0;
+	}
+}
+
+
+// play controls
+.track, .olTrack{
+	padding:.4em 0 .4em 0;
+	/*white-space: nowrap;*/
+	.albumArt{
+		background-color:tomato;
+		background-size: cover;
+		background-position: center;
+		display:inline-block;
+	  vertical-align: middle;
+		width:2em;
+		height:2em;
+		margin: 0 .5em 0 0;
+		@media only screen and (max-device-width: $break-small) {
+			width:7.5vw;
+			height:7.5vw;
+		}
+	}
+	.buttons{
+		display:inline-block;
+	  width:2em;
+	  height:2em;
+	  border-radius:2em;
+	  white-space: normal;
+	  cursor: pointer;
+	  vertical-align: middle;
+	  margin-right:1em;
+	  margin-left:1em;
+	  background-color: $button-color;
+	  -webkit-transition : $button-transition;
+	  &:hover{
+	  	background-color: $button-hover-color;
+	  	cursor:pointer;
+	  }
+	  @media only screen and (max-device-width: $break-small) {
+	  	width:8vw;
+	  	height:8vw;
+	  	border-radius:4vw;
+	  	margin: 0 1vw 0 1vw;
+	  }
+	  .play{
+			float:left;
+			background-image: url('/images/play-white.svg');
+			background-size: cover;
+			background-position: 25% 25%;
+			width:2em;
+			height:2em;
+			@media only screen and (max-device-width: $break-small) {
+				width:7.5vw;
+				height:7.5vw;
+			}
+		}
+		.pause{
+			float:left;
+			background-image: url('/images/pause-white.svg');
+			background-size: cover;
+			background-position: center;
+			width:2em;
+			height:2em;
+			@media only screen and (max-device-width: $break-small) {
+				width:7.5vw;
+				height:7.5vw;
+			}
+		}
+		.playOrange{
+			background-image: url('/images/play_orange.svg');
+		}
+		.pauseOrange{
+			background-image: url('/images/pause_orange.svg');
+		}
+		.inactive{
+			display:none;
+		}
+	}
+	.text{
+		vertical-align:middle;
+		display:inline-block;
+	  width:30vw;
+	  white-space: normal;
+	  @media only screen and (max-device-width: $break-small) {
+			width:83vw;
+		}
+	}
+
+}
+
+.centreButton{
+	width: 13.2vw;
+	margin:0 auto;
+	padding: 0 0 1vw 0;
+}
+
+//footer
+.footer{
+	height:10vw;
+	background-color:white;
+	padding:1vw .5vw 1vw .5vw;
+}
+
+
+
+
+
+
+

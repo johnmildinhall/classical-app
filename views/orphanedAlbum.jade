@@ -1,0 +1,24 @@
+doctype html
+html
+	include head.jade	
+	body
+		include search.jade
+		include albumOverlay.jade
+		.albumHead
+			.breadcrumbs
+				.bc-item 
+					a.bc(href='/') home &rsaquo;
+				.bc-item 
+					a.bc(href='/#{type}/#{person}/albums') albums &rsaquo;
+				.bc-item #{title}
+
+
+			h2.test #{title}
+			h3.releaseDate #{date}
+			.popularity #{popularity}
+		.composerContent
+			.details
+				.albumSquare(style='background-image:url(#{image})')
+				include spotify-player.jade
+
+

@@ -1,0 +1,10 @@
+if(details.albums.length > 0)
+	h2.sectionTitle Albums
+	.albums.ag 
+		each album in details.albums
+			.albumBox(id=album.ID)
+				.albumBoxInner(style='#{album.image}')
+					.spacer
+					.albumNameOuter
+						.albumName 
+					.albumImage

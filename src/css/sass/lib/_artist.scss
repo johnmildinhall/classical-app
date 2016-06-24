@@ -1,0 +1,44 @@
+.artistContainer{
+	width:100%;
+	display:flex;
+	flex-wrap: wrap;
+	.artistHolder{
+		flex: 1 0 auto;
+		height:25%;
+		width:20%;
+		.artistImage{
+			height:50px;
+			width:50px;
+			background-size: cover;
+			background-position:center;
+			margin: 0px auto 0px auto;
+			border-radius: 25px;
+			-webkit-border-radius: 25px;
+			-moz-border-radius: 25px;
+			border: 2px solid #666 ;
+			box-shadow: 1px 1px 0px #444;
+		}
+	}
+}
+
+.artistName{
+	margin-top:.5em;
+	text-rendering: optimizeLegibility;
+	text-shadow: 1px 1px 1px $shadow;
+}
+
+.topComposers{
+	/*min-width:400px;*/
+	/*width:60%;*/
+	margin:.5em;
+}
+
+		.tc{
+			float:left;
+			width:auto;
+		}
+
+.relatedArtists{
+	margin: .5em;
+}
+

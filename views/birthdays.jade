@@ -1,0 +1,40 @@
+.birthdays
+	h2.sectionTitle Composer Birthdays
+	.grid
+		.grid-sizer
+		each birthday in birthdays			
+			.grid-item(style='#{birthday.images}')
+				.when
+					.whenInner #{birthday.when}
+				.bdayDetails
+					a(href='#{birthday.url}')
+						.detailsContainer
+							.detailsInner
+								.composer.super-strong #{birthday.name}
+								.life #{birthday.life}
+		.grid-item.grid-item--width2#proto
+			.when
+			.bdayDetails
+				.detailsContainer
+					.composer
+					.life
+		.end
+	.noPhoto
+		.when#Monday Monday
+		.when#Tuesday Tuesday
+		.when#Wednesday Wednesday
+		.when#Thursday Thursday
+		.when#Friday Friday
+		.when#Saturday Saturday
+		.when#Sunday Sunday
+		.when#NextMonday Next Monday
+		.when#NextTuesday Next Tuesday
+		.when#NextWednesday Next Wednesday
+		.when#NextThursday Next Thursday
+		.when#NextFriday Next Friday
+		.when#NextSaturday Next Saturday
+		.when#NextSunday Next Sunday
+		.noPhotoContainer#proto
+			.composer
+			.life
+		.endNoPhoto

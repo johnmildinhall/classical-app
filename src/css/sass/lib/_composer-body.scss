@@ -1,0 +1,68 @@
+.composerQuote{
+	margin: 4vw;
+}
+.details{
+	display:flex;
+	margin: 0px .5vw 0px .5vw;
+	h2{
+		margin: 0;
+	}
+	@media only screen and (max-device-width: $break-small) {
+	  width: 100vw;
+	   -webkit-flex-direction: column;
+   	flex-direction: column;
+	}
+	.composerBox{
+		width:61vw;
+		margin: 0 .5vw 0 0;
+		@media only screen and (max-device-width: $break-small) {
+			width: 100vw;
+			padding: 0 2.5vw 0 2.5vw;
+			box-sizing:border-box;
+		}
+		.bio{
+			padding:.5vw .5vw .5vw 0;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			text-align: justify;
+	    text-justify: inter-word;
+	    .moreBio:hover{
+	    	cursor:pointer;
+	    }
+		}
+		.upcomingConcerts{
+			margin: 0 0 0 0vw
+		}
+	}
+	.featureBox{
+		width:38vw;
+		@media only screen and (max-device-width: $break-small) {
+			width: 100vw;
+		}
+		.topTracks{
+			margin: 0;
+			/*width:40%;*/
+			max-width: 98vw;
+			padding: 0 1em 1em 0;
+			
+			
+			@media only screen and (max-device-width: $break-small) {
+				width:95vw;
+				padding:1vw;
+				margin: 0 0 0 2.5vw;
+				box-sizing:border-box;
+			}
+			.topTracksHead{
+				margin-bottom: .5vw;
+			}
+			.topTracksTitle{
+				margin-top:.4vw;
+			}
+
+			.topTrackName{
+
+			}
+		}
+	}
+
+}

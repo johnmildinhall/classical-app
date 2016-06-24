@@ -1,0 +1,41 @@
+.catSpacer{
+	height: 2em;
+	width:100%;
+}
+.catalogue{
+	clear:both;
+	border-bottom: 1px solid #000;
+	&:hover{
+		text-decoration: underline;
+	}
+}
+.catItem{
+	float:left;
+	width:10vw;
+	min-height:1em;
+}
+.catName{
+	vertical-align:top;
+	display:inline-block;
+  width:60vw;
+  white-space: normal;
+}
+.catCount{
+	float:right;
+}
+.suffix{
+	clear:both;
+}
+.sufItem{
+	float:left;
+	width:2vw;
+	min-height:1em;
+	margin-left:2vw;
+}
+.sufName{
+	margin-left:2em;
+	vertical-align:top;
+	display:inline-block;
+  width:30vw;
+  white-space: normal;
+}

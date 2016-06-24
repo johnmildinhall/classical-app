@@ -1,0 +1,84 @@
+doctype html
+html
+	include head.jade	
+	body
+		include menubar.jade
+		include search.jade
+		include albumOverlay.jade
+		#id-holder #{details.ID}
+		#pageType artist
+		.breadcrumbs
+			.bc-item 
+				a.bc(href='/') home &rsaquo;
+			.bc-item 
+					a.bc(href='/artists') artists &rsaquo;
+			.bc-item #{details.name}
+		.breadcrumbsMob
+			.bc-item
+				a.bc(href='/artists') &lsaquo; 
+		.composerBackground(style='#{details.images}')
+		.composerHead
+			.headTitleBox
+				h1.name #{details.name}
+		.composerContent
+			.composerBody
+				.details
+					.composerBox
+						.relatedContainer
+							if (details.mostRecorded.length > 0)
+								h2.sectionTitle Most Recorded
+								.related.comp
+									each most in details.mostRecorded
+										.relatedBox
+											a.composerLink(href='#{most.url}')
+												.relatedImage(style='#{most.imageSmall}')
+													.relatedInner
+														.relatedName.strong #{most.composer}
+									if (details.mostRecorded.length > 5)					
+										.button#moreComposers
+											.buttonInner.super-strong More<br />Composers
+											include loader.jade
+									.spacer
+						.relatedContainer
+							if (details.relatedArtists.length)
+								h2.sectionTitle Related Artists
+								.related.art
+									each art in details.relatedArtists
+										.relatedArtistBox
+											a.artistLink(href='#{art.url}')
+												.relatedImage(style='#{art.imageSmall}')
+													.relatedInner
+														.relatedArtistName.strong #{art.name}
+									if (details.relatedArtists.length > 5)
+										.button#moreArtists
+											.buttonInner.super-strong More<br />Artists
+											include loader.jade
+										.spacer
+						if showUpcoming
+							h2.sectionTitle Upcoming Concerts
+							each concert in upcoming
+								include concertBox.jade
+					.featureBox
+						if showFeatured
+							h2.sectionTitle Next Concert
+							each concert in concerts
+								include concertBox.jade
+						h2.sectionTitle Top Recordings
+						.topTracks
+							each track in details.topTracks
+								.track
+									.buttons
+										.play(id='a'+track.id, data-preview=track.preview_url)
+										.pause.inactive(id='a'+track.id)
+									.text
+										.topTrackName #{track.name}
+										.topTrackArtist !{track.artists}
+				include albumGrid.jade
+				if (details.albums.length > 7)	
+					.centreButton
+						.button#moreAlbums 
+							.buttonInner.super-strong More<br />Albums
+							include loader.jade
+		include footer.jade
+
+

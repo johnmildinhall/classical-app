@@ -1,0 +1,13 @@
+.featuredAlbum(style='#{featured.images}')
+	h2.sectionTitle Featured Album
+	.featuredOuter
+		a.playOuter.paused
+			.featuredPlay
+				.featuredInnerPlay(id='a'+'#{featured._id}', data-preview='#{featured.preview_url}') &#9654
+				.featuredInnerPause.hidden &#10074&#10074
+	.featuredBottom
+		.featuredPlaying
+		.featuredDetails
+			.featuredComposer.super-strong !{featured.composers}
+			.featuredArtists !{featured.artists}
+			.featuredTitle !{featured.name}

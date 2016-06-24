@@ -1,0 +1,366 @@
+.quoteBackground{
+	width:100vw;
+	height:100vh;
+	//background-size: cover;
+	background-size:cover;
+	background-position: center 22%;
+	//background-blend-mode: color-burn;
+	-webkit-filter: contrast(400%) grayscale(100%);
+	position:absolute;
+	//animation: animatedBackground 40s linear infinite;
+	//background-image:url("../images/triangles.jpg");
+	}
+
+	// @keyframes animatedBackground {
+	//    0% {
+	//      -webkit-transform: translateY(-25%);
+	//    }
+	//    50% { 
+	//      -webkit-transform: translateY(0%);
+	//    }
+	//    100% {
+	//    	 -webkit-transform: translateY(-25%);
+	//    }
+	// }
+.quoteSpacer{
+	width:100vw;
+	height:100vh;	
+}
+.quote{
+	
+	@media only screen and (max-device-width: $break-small) {
+
+	}
+}
+.attribution{
+	margin: 1vw 0 0 0;
+	.quoteName{
+
+	}
+	@media only screen and (max-device-width: $break-small) {
+
+	}
+}		
+.quoteBody{
+	position:absolute;
+	bottom:0;
+	margin: 0 5vw 5vw 5vw;
+	padding: 1vw;
+	background-color:$white;
+
+}	
+
+.upcoming{
+	// background-blend-mode:overlay;	
+	-webkit-filter: contrast(400%) grayscale(100%);
+	-webkit-transition : -webkit-filter 500ms linear;
+	position:relative;
+	height:41vw;
+	width:100%;
+	background-size:cover;
+	box-sizing: border-box;
+	&:hover{
+		-webkit-filter: none;
+		-webkit-filter: contrast(200%);
+	}
+	@media only screen and (max-device-width: $break-small) {
+    height: 100vw;
+    box-shadow: 5px 5px 5px #888888;
+    margin: 0 0 2vw 0;
+	}
+	.upcomingHeader{
+		background-color:$white;
+		width:100%;
+		padding: 0 0 0 .5em;
+		box-sizing:border-box;
+	}
+	.trapezoid{
+		position:absolute;
+		background-color:$white;
+		bottom:1.5em;
+		right:2.5em;
+		padding:.25em 1em .25em 1em;
+		height:auto;
+		width:24em;
+			-webkit-transform: skew(-16deg);
+			-moz-transform: skew(-16deg);
+      -o-transform: skew(-16deg);
+	@media only screen and (max-device-width: $break-small) {
+			right:auto;
+			left:2.5em;
+    	width: 80vw;
+		}
+    .innerUpcoming{
+    	-webkit-transform: skew(+16deg);
+			-moz-transform: skew(+16deg);
+      -o-transform: skew(+16deg);
+			position:relative;
+			margin:0 3em 0 2em;
+			.concertTitle{
+
+				@media only screen and (max-device-width: $break-small) {
+				}
+			}
+			.composerBar{
+				.concertComposerLink{
+				}
+				@media only screen and (max-device-width: $break-small) {
+					margin:2vw 0 2vw 0;
+				}
+			}
+			.concertDate{
+				@media only screen and (max-device-width: $break-small) {
+				}
+			}
+		}
+	}
+}
+
+		
+
+.frontContent{
+	margin: 0 0 0 0;
+	clear:both;
+	box-sizing: border-box;
+	@media only screen and (max-device-width: $break-small) {
+		margin: 0 0vw 1vw 0;
+	}
+	.left{
+		width:61vw;
+		float:left;
+	@media only screen and (max-device-width: $break-small) {
+		    width: 100vw;
+		}
+		.featuredAlbum {
+			position:relative;
+			margin: 0 0 0 0;
+			width:100%;
+			height:59.5vw;
+			background-size:cover;
+			-webkit-filter: contrast(400%) grayscale(100%);
+			box-sizing: border-box;
+			@media only screen and (max-device-width: $break-small) {
+		    width: 100vw;
+		    height: 100vw;
+		    box-shadow: 5px 5px 5px #888888;
+		    margin: 0 0 2vw 0;
+			}
+			.featuredOuter {
+				position:absolute;
+				left:50%;
+				top:50%;
+				.playOuter{
+					.featuredPlay {
+						margin-left: -50%;
+						margin-top: -50%;
+						position: relative;
+						background-color: $black;
+						color:white;
+						padding: 2em;
+						width: 2em;
+						height: 2em;
+						-webkit-border-radius: 4em;
+						-moz-border-radius: 4em;
+						border-radius: 4em;
+						border:1px solid white;
+						-webkit-transition : $button-transition;
+						  &:hover{
+						  	background-color: $button-hover-color;
+						  	cursor:pointer;
+						  }
+						.featuredInnerPlay {
+							position: absolute;
+							left: 1.15em;
+							top: .80em;
+							font-size:2em;
+						}
+						.featuredInnerPause {
+							position: absolute;
+							left: 1.15em;
+							top: .80em;
+							font-size:2em;
+						}
+					}
+					.featuredPlay:hover {
+						cursor: pointer;
+					}			
+				}	
+			}
+
+			.featuredHeader {
+				background-color: $white;
+				font-style: italic;
+				color: white;
+				width: 100%;
+				padding: 0 0 0 .5em;
+				box-sizing: border-box;				
+			}
+			.featuredBottom{
+					width: 100%;
+					position: absolute;
+					bottom: 0;
+				.featuredPlaying{
+					background-color: $white;
+					padding: 0 .5em 0 .5em;
+				}
+				.featuredDetails {
+					box-sizing: border-box;
+					color: black;
+					background-color:white;
+					
+
+					.featuredTitle {
+						padding: 0 .5em 0 .5em;
+						background-color: $white;
+						@media only screen and (max-device-width: $break-small) {
+						}
+					}
+					.featuredArtists {
+						padding:  0 .5em 0 .5em;
+						background-color: $white;
+						a.artistLink{
+							color:white;
+						}
+						@media only screen and (max-device-width: $break-small) {
+						}
+					}
+				}				
+			}
+
+		}
+	}
+
+
+
+	.birthdays {
+		width: 39vw;
+		background-color: $white;
+		float: left;
+		margin:0;
+		box-sizing: border-box;
+		@media only screen and (max-device-width: $break-small) {
+		    width: 100vw;
+		    margin: 0vw 1vw 1vw 0;
+		}
+		.noPhoto {
+			.when {
+				display: none;
+			}
+		}
+	
+
+		.composer {
+
+			@media only screen and (max-device-width: $break-small) {
+
+			}
+		}
+		.life{
+
+		}
+
+		/* fluid 5 columns */
+		// .grid-sizer{
+		// 	width: 39vw;
+		// 	height: 39vw;		
+		// 	margin: 0;
+		// 	box-sizing: border-box;	
+		// 	display:none;
+		// 	@media (max-device-width: $break-small) {
+		//     width: 50vw;
+		//     height: 50vw;
+		// 	}
+		// }
+		.grid{
+			display:flex;
+			flex-wrap: wrap;
+		}
+		.grid-item {
+			background-color:white;
+			-webkit-filter: contrast(400%) grayscale(100%);
+			-webkit-transition : -webkit-filter 500ms linear;
+			background-size: cover;
+			width: 19.5vw;
+			height: 19.5vw;
+			margin: 0;
+			box-sizing: border-box;
+			@media (max-device-width: $break-medium) {
+		    width: 39vw;
+		    height: 39vw;
+			}
+			@media only screen and (max-device-width: $break-small) {
+		    width: 100vw;
+		    height: 100vw;
+			}
+			&:hover{
+				-webkit-filter: contrast(200%);
+			}
+			.when {
+				padding: .5em;	
+				height: 60%;
+				.whenInner{
+					padding:.25vw;
+					display:table;
+					max-device-width:50%;
+					background-color:$white;
+				}
+			}
+			.bdayDetails {
+				box-sizing: border-box;
+				padding: .5em;	
+				position: relative;
+				height: 40%;
+				width: 100%;
+				.detailsContainer {
+					position: absolute;
+					bottom: 2.5vw;		
+					@media only screen and (max-device-width: $break-small) {
+						bottom: 10vw;
+					}
+					.detailsInner{
+						display:table;
+						background-color:$white;
+						padding:.5vw;
+						.composer{	
+							@media only screen and (max-device-width: $break-small) {
+
+							}						
+						}
+						.life{
+							color:$black !important;
+						}
+
+					}
+				}
+
+			}
+		}
+
+		/* 2 columns */
+		.grid-item--width2 { 
+			width: 39vw; 
+			height: 39vw;
+			@media only screen and (max-device-width: $break-small) {
+		    width: 50vw;
+		    height: 50vw;
+			}
+			.bdayDetails { 
+				.detailsContainer {
+					.composer { 
+					}
+					.life{
+					}
+				}
+			}
+		}
+
+		.grid-sizer{
+			background-color:none;
+			//display:none;
+		}
+
+
+	}
+
+}
+

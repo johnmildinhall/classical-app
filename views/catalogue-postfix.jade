@@ -1,0 +1,46 @@
+doctype html
+html
+	include head.jade	
+	body
+		include menubar.jade
+		include search.jade
+		#pageType catalogue
+		.id-holder #{ID}
+		.breadcrumbs
+			.bc-item 
+				a.bc(href='/') home &rsaquo;
+			.bc-item 
+				a.bc(href='/composers') composers &rsaquo;
+			.bc-item 
+				a.bc(href='/composers/#{composer}') #{composer} &rsaquo;
+			.bc-item 
+				a.bc(href='/composers/#{composer}/cat') catalogue &rsaquo;
+			if symbol
+				.bc-item 
+					a.bc(href='/composers/#{composer}/cat/#{symbol}') #{symbol} &rsaquo;				
+			if work
+				.bc-item 
+					a.bc(href='/composers/#{composer}/cat/#{symbol}/#{work}') #{work} &rsaquo;	
+			if suffix
+				.bc-item 
+					a.bc(href='/composers/#{composer}/cat/#{symbol}/#{work}/#{suffix}') #{suffix} &rsaquo;
+			if postfix
+				.bc-item 
+					a.bc(href='/composers/#{composer}/cat/#{symbol}/#{work}/#{suffix}/#{postfix}') #{postfix} &rsaquo;		
+		.megaPersonList
+			.concertHolder
+				.catSpacer
+				h1 #{composer}
+				h3 Catalogue : #{symbol}.#{work} : #{suffix} , #{postfix}
+				.catSpacer
+				if data
+					each track in data.tracks
+						.track
+							.buttons
+								.play(id='a'+track._id, data-preview=track.preview_url)
+								.pause.inactive(id='a'+track._id)
+							a(href='/composers/#{composer}/albums/#{track.albumID}')
+								.albumArt(style='#{track.images}')
+							.catName
+								.topTrackName !{track.name}
+								.topTrackArtist !{track.artists}

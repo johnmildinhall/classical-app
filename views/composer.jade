@@ -1,0 +1,106 @@
+doctype html
+html
+	include head.jade	
+	body
+		include menubar.jade
+		include search.jade
+		include albumOverlay.jade
+		#id-holder #{details.ID}
+		#pageType composer
+		.breadcrumbs
+			.bc-item 
+				a.bc(href='/') home &rsaquo;
+			.bc-item 
+				a.bc(href='/composers') composers &rsaquo;
+			.bc-item #{details.name}
+		.breadcrumbsMob
+			.bc-item
+				a.bc(href='/composers') &lsaquo; 
+		.composerBackground(style='#{details.images}')
+		.composerHead
+			.headTitleBox
+				h1.name.hero #{details.name}
+				h3.life.hero-subtitle #{details.life}
+		.composerContent
+			.composerBody
+				.details
+					.composerBox
+						h2.sectionTitle Biography
+						.bio 
+							span.first #{details.bio}
+							if (details.bio2)
+								span.ellipsis ...
+								span.moreBio.super-strong  more
+								span.second.hidden #{details.bio2} 
+						if(catalogueExists === true)
+							.catalogueButtonContainer
+								a.noUnderline(href='/composers/#{details.name}/cat')
+									.catalogueButton
+										.whiteOnBlack view #{details.shortName}'s catalogue						
+						.relatedContainer
+							if (details.relatedArtists.length)
+								h2.sectionTitle Related Composers
+								.related.comp
+									each rel in details.relatedArtists
+										.relatedBox
+											a.composerLink(href='#{rel.url}')
+												.relatedImage(style='#{rel.imageSmall}')
+													.relatedInner
+														.relatedName.strong #{rel.name}
+									if (details.relatedArtists.length > 9)					
+										.button#moreComposers
+											.buttonInner.super-strong More<br />Composers
+											include loader.jade
+									.spacer
+						.topArtistsContainer
+							h2.sectionTitle.tomato Most Recorded
+							.related.art
+								each most in details.mostRecorded
+									.relatedArtistBox
+										a.artistLink(href='#{most.url}')
+											.relatedImage(style='#{most.imageSmall}')
+												.relatedInner
+													.relatedArtistName.strong #{most.artist}
+								.button#moreArtists 
+									.buttonInner.super-strong More<br />Artists
+									include loader.jade
+								.spacer
+						if showUpcoming
+							h2.sectionTitle Upcoming Concerts
+							each concert in upcoming
+								include concertBox.jade
+					.featureBox
+						if showFeatured
+							h2.sectionTitle Next Concert
+							each concert in concerts
+								include concertBox.jade
+						if details.topTracks
+							h2.sectionTitle.green Top Recordings
+							.topTracks
+								each track in details.topTracks
+									.track
+										.buttons
+											.play(id='a'+track.id, data-preview=track.preview_url)
+											.pause.inactive(id='a'+track.id)
+										.text
+											.topTrackName !{track.name}
+											.topTrackArtist !{track.artists}
+										//- 
+				if details.quote
+					.composerQuote
+						h1.quote #{details.quote}
+						.attribution
+							h3.quoteName #{details.name}
+							h3.quoteLife
+				if details.albums.length
+					include albumGrid.jade
+					.centreButton
+						.button#moreAlbums 
+							.buttonInner.super-strong More<br />Albums
+							include loader.jade
+		include footer.jade
+					
+
+
+
+		

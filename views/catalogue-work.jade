@@ -1,0 +1,53 @@
+doctype html
+html
+	include head.jade	
+	body
+		include menubar.jade
+		include search.jade
+		#pageType catalogue
+		.id-holder #{ID}
+		.breadcrumbs
+			.bc-item 
+				a.bc(href='/') home &rsaquo;
+			.bc-item 
+				a.bc(href='/composers') composers &rsaquo;
+			.bc-item 
+				a.bc(href='/composers/#{composer}') #{composer} &rsaquo;
+			.bc-item 
+				a.bc(href='/composers/#{composer}/cat') catalogue &rsaquo;
+			.bc-item 
+				a.bc(href='/composers/#{composer}/cat/#{symbol}') #{symbol} &rsaquo;	
+			.bc-item 
+				a.bc(href='/composers/#{composer}/cat/#{symbol}/#{work}') #{work} &rsaquo;	
+		.megaPersonList
+			.concertHolder
+				.catSpacer
+				h1 #{composer}
+				h3 #{symbol}.#{work} : #{canonicalName}
+				.catSpacer
+				if data
+					each item in data
+						.catalogue
+							a.catName(href='/composers/#{composer}/cat/#{symbol}/#{item.work}/#{item.suffix}') #{item.suffix}. #{item.suffixName}
+							.catCount #{item.count}
+							if item.tracks
+								each track in item.tracks
+									.track
+										.buttons
+											.play(id='a'+track._id, data-preview=track.preview_url)
+											.pause.inactive(id='a'+track._id)
+										a(href='/composers/#{composer}/albums/#{track.albumID}')
+											.albumArt(style='#{track.images}')
+										.catName
+											.topTrackName !{track.name}
+											.topTrackArtist !{track.artists}											
+										//- if suffix.suffix
+										//- 	if suffix.postfix
+										//- 			.suffix
+										//- 				.catItem
+										//- 				.sufItem #{suffix.suffix}.#{suffix.postfixStr}
+										//- 				.sufName 
+										//- 					a(href='/composers/#{composer}/cat/#{symbol}/#{item.work}/#{suffix.suffix}/#{suffix.postfix}') #{suffix.suffixName}
+										//- 				//- .sufCount	#{suffix.count}
+										//- 	else			
+										//- .sufCount	#{suffix.count}

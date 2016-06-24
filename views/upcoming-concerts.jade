@@ -1,0 +1,8 @@
+.upcoming(style='#{upcoming.image}')
+	a.concertPageLink(href = '#{upcoming.page}')
+		.trapezoid
+			.innerUpcoming
+				h3.concertTitle #{upcoming.title}
+				.composerBar.super-strong !{upcoming.composerList}
+				.concertDate #{upcoming.date.shortHumanDate}
+	

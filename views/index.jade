@@ -1,0 +1,27 @@
+doctype html
+html
+	include head.jade
+	
+	body
+		include menubar.jade
+		include search.jade
+		#pageType.hidden home
+		.frontContent
+			include quote.jade
+			.quoteSpacer
+			.left
+				h2.sectionTitle Featured Concert
+				include upcoming-concerts.jade
+				include featured-album.jade
+				h2.sectionTitle More Concerts
+				.doubleConcerts
+					each concert in concerts
+						include concertBox.jade
+					
+			include birthdays.jade		
+
+
+
+
+
+		

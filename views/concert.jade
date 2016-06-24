@@ -1,0 +1,35 @@
+html
+	include head.jade	
+	body
+		include search.jade
+		include menubar.jade
+		include albumOverlay.jade
+		.id-holder #{ID}
+		.breadcrumbs
+			.bc-item 
+				a.bc(href='/') home &rsaquo;
+			.bc-item 
+					a.bc(href='/concerts') concerts &rsaquo;
+			.bc-item #{data.title}
+		.breadcrumbsMob
+			.bc-item
+				a.bc(href='/concerts') &lsaquo; 
+		.megaPersonList
+			.concertHolder
+				.firstConcert 
+					.upcoming(style='#{data.image}')
+						.trapezoid
+							.innerUpcoming
+								h3.concertTitle #{data.title}
+								.concertDate #{data.date.shortHumanDate}
+					.concertComposers.super-strong !{data.composerList}
+					h2.subtitle #{data.subTitle}
+					.venue #{data.venue}
+					.subVenue #{data.subVenue}
+					h3.sectionTitle Composers
+					.composerList.super-strong !{data.composers}
+					h3.sectionTitle Artists
+					.artistList !{data.artists}
+					.bookTickets 
+						.bookButton 
+							a.bookLink(href = '#{data.url}') >> Book Tickets >>

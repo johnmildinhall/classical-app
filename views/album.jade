@@ -1,0 +1,54 @@
+doctype html
+html
+	include head.jade	
+	body
+		include menubar.jade
+		include search.jade
+
+		.breadcrumbs
+			.bc-item 
+				a.bc(href='/') home &rsaquo;
+			if data.albumComposer
+				.bc-item 
+					a.bc(href='/composers') composers &rsaquo;
+				.bc-item 
+					a.bc(href='/composers/#{data.albumComposer}') #{data.albumComposerShort} &rsaquo;
+				.bc-item 
+					a.bc(href='/composers/#{data.albumComposer}/albums') albums &rsaquo;
+			if data.albumArtist
+				.bc-item 
+					a.bc(href='/artists') artists &rsaquo;
+				.bc-item 
+					a.bc(href='/artists/#{data.albumArtist}') #{data.albumArtistShort} &rsaquo;
+				.bc-item 
+					a.bc(href='/artists/#{data.albumArtist}/albums') albums &rsaquo;
+			if (!data.albumComposer & !data.albumArtist)
+				.bc-item
+					a.bc() albums &rsaquo;
+			.bc-item #{data.shortName}
+			.breadcrumbsMob
+				if data.albumComposer
+					.bc-item
+						a.bc(href='/composers') &lsaquo; 
+				if data.albumArtist
+					.bc-item
+						a.bc(href='/artists') &lsaquo; 
+		h2.olAlbumTitle.albumPageTitle #{data.name}
+		.albumBody
+			.albumDetails
+				.albumDetailsContainer
+					.albumTitle
+						.releaseDate #{data.release_date}
+						.popularity Popularity: #{data.popularity}%
+					.sectionTitle Composers
+					.albumComposers.super-strong !{data.composerList}
+					.sectionTitle Artists
+					.albumArtists !{data.artistList}
+			.fadeOverlay
+				.playerContainer
+					include spotify-player.jade
+
+
+
+
+

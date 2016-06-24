@@ -1,0 +1,10 @@
+.quoteBackground(style='#{quote.images}')
+a(href='#{quote.url}')
+	.quoteBody
+		if(quote.quotes.length < 70)
+			h1.quote #{quote.quotes}
+		else
+			h4.quote #{quote.quotes}
+		.attribution
+			h2.quoteName #{quote.name}
+			h2.quoteLife #{quote.quoteLife}
